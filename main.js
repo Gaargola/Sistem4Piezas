@@ -9,7 +9,7 @@ const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canv
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Creando un plano
-const planeGeometry = new THREE.PlaneGeometry(20, 20);
+const planeGeometry = new THREE.PlaneGeometry(50, 50);
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xECECEC });
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 plane.rotation.x = -Math.PI / 2;
