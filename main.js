@@ -23,10 +23,10 @@ rectangle.position.set(0, 1, 0);
 scene.add(rectangle);
 
 // cubo
-const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+const cubeGeometry = new THREE.BoxGeometry(2, 1, 1);
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x564A24 });
 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-cube.position.set(-2, 0.5, 0);
+cube.position.set(2, 0.5, 0);
 scene.add(cube);
 
 // esfera
@@ -37,8 +37,8 @@ sphere.position.set(2, 1, 0);
 scene.add(sphere);
 
 // colicion
-const raycaster = new THREE.Raycaster();
-raycaster.set(plane.position, new THREE.Vector3().subVectors(plane.position, rectangle.position, cube.position, sphere.position).normalize());
+//const raycaster = new THREE.Raycaster();
+//raycaster.set(plane.position, new THREE.Vector3().subVectors(plane.position, rectangle.position, cube.position, sphere.position).normalize());
 
 
 // posicion del mouse y control
@@ -58,8 +58,8 @@ document.addEventListener('mousemove', event => {
     x: event.offsetX - previousMousePosition.x,
     y: event.offsetY - previousMousePosition.y
   };
-  sphere.position.x += deltaMove.x * 0.01;
-  sphere.position.y -= deltaMove.y * 0.01;
+  sphere.position.x += deltaMove.x * 0.02;
+  sphere.position.y -= deltaMove.y * 0.02;
   previousMousePosition = {
     x: event.offsetX,
     y: event.offsetY
